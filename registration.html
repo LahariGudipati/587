@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+    <title>Login Form with Validation</title>
+    <style>
+        /* Basic styling for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login Form</h2>
+    <form id="loginForm" onsubmit="return validateForm()">
+        <!-- Username input -->
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" maxlength="10" placeholder="Enter username" required>
+        <span id="usernameError" class="error"></span>
+
+        <!-- Password input -->
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+        
+        <!-- Submit button -->
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<!-- Action Page (hidden initially) -->
+<div class="container" id="actionPage" style="display:none;">
+    <h2>Success!</h2>
+    <p>Your login is successful.</p>
+</div>
+
+<script>
+    function validateForm() {
+        let username = document.getElementById("username").value;
+        let usernameError = document.getElementById("usernameError");
+
+        // Check for lowercase letters
+        if (/[a-z]/.test(username)) {
+            alert("Only uppercase letters are allowed. Lowercase letters are not allowed.");
+            return false;
+        }
+        
+        // Check for numbers
+        if (/\d/.test(username)) {
+            alert("Only uppercase letters are allowed. Numbers are not allowed.");
+            return false;
+        }
+
+        // Check for special characters
+        if (/[^A-Za-z0-9]/.test(username)) {
+            alert("Only uppercase letters are allowed. Special characters are not allowed.");
+            return false;
+        }
+
+        // Check if username length is exactly 10 characters
+        if (username.length !== 10) {
+            alert("Username must be exactly 10 uppercase letters.");
+            return false;
+        }
+
+        // Display the action page (success message)
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('actionPage').style.display = 'block';
+        return false;  // Prevent actual form submission to stay on the page
+    }
+</script>
+
+</body>
+</html>
+
