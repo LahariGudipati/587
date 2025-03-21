@@ -1,104 +1,84 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html" />
-<!-- CSS Tabs is licensed under Creative Commons Attribution 3.0 - http://creativecommons.org/licenses/by/3.0/ -->
-<style type="text/css">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>UDBHAV 2K25  REGISTRATION FORM</h2>
+      <div id="myform">
+        <form id="registrationForm">
+          <label>First Name:</label>
+          <input type="text" id="firstName" required />
+          <br />
+          <br />
+          <label>Last Name:</label>
+          <input type="text" id="lastName" required />
+          <br />
+          <br />
+          <label>Gender:</label>
+          <input type="radio" name="gender" value="Male" /> Male
+          <input type="radio" name="gender" value="Female" /> Female
+          <input type="radio" name="gender" value="Others" /> Others
+          <br />
+          <br />
 
-body {
-font: 100% verdana, arial, sans-serif;
-background-color: #fff;
-}
+          <label>Course:</label>
+          <select id="course">
+            <option value="B-Tech">B-Tech</option>
+            <option value="M-Tech">M-Tech</option>
+            <option value="MBA">MBA</option>
+          </select>
+          <br />
+          <br />
 
-/* begin css tabs */
+          <label>Year:</label>
+          <select id="year">
+            <option value="I">I</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+            <option value="IV">IV</option>
+          </select>
+          <br />
+          <br />
 
-ul#tabnav { /* general settings */
-text-align: left; /* set to left, right or center */
-margin: 0;
-font: bold 11px verdana, arial, sans-serif; /* set font as desired */
-border-bottom: 1px solid #6c6; /* set border COLOR as desired */
-list-style-type: none;
-padding: 3px 10px 0px 10px;
-}
+          <label>Branch:</label>
+          <select id="branch">
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="IT">IT</option>
+          </select>
+          <br />
+          <br />
 
-ul#tabnav li { /* do not change */
-display: inline-block;
-}
+          <label>Events Interested:</label>
+          <input type="checkbox" value="Dance" /> Dance
+          <input type="checkbox" value="Theatre" /> Theatre
+          <input type="checkbox" value="Music" /> Music
+          <input type="checkbox" value="Singing" /> Singing
+          <input type="checkbox" value="Standup Comedy" /> Standup Comedy
+          <br />
+          <br />
+          <label>Performing:</label>
+          <input type="radio" name="perform" value="Solo" /> Solo
+          <input type="radio" name="perform" value="Group" /> Group
+          <br />
+          <br />
+          <label>Group of (2-5 people):</label>
+          <input type="number" id="groupSize" min="2" max="5" />
+          <br />
+          <br />
+          <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
-ul#tabnav li.selected { /* settings for selected tab */
-border-bottom: 1px solid #fff; /* set border color to page background color */
-background-color: #fff; /* set background color to match above border color */
-}
-
-
-ul#tabnav li { /* settings for all tab links */
-padding: 3px 4px;
-border: 1px solid #6c6; /* set border COLOR as desired; usually matches border color specified in #tabnav */
-border-bottom: 1px solid #cfc;
-background-color: #cfc; /* set unselected tab background color as desired */
-color: #666; /* set unselected tab link color as desired */
-margin-right: 0px; /* set additional spacing between tabs as desired */
-text-decoration: none;
-cursor: pointer;
-}
-
-ul#tabnav li:hover { /* settings for hover effect */
-background: #afa; /* set desired hover color */
-}
-
-/* end css tabs */
-
-/* 100% height iframe */
-html, body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-nav {
-    margin-top: 5px;
-}
-
-iframe {
-    flex: 1;
-    border: none;
-}
-
-h1
-{
-    display: inline;
-    float: left;
-    font-size: small;
-    margin: 0;
-    padding: 0 10px;
-}
-
-h2
-{
-    display: inline;
-    float: right;
-    font-size: small;
-    margin: 0;
-    padding: 0 10px;
-}
-
-</style>
-</head>
-
-<body>
-<nav>
-<h1><a id="hudson_link" href="#"></a></h1>
-<h2><a id="zip_link" href="#">Zip</a></h2>
-
-<ul id="tabnav">
-<script src="/static/f4fe469f/plugin/htmlpublisher/js/htmlpublisher.js" type="text/javascript"></script><li id="tab1" class="unselected" value="registration.html">registration</li><span class="links-data-holder" data-back-to-name="github html" data-root-url="" data-job-url="job/github%20html/" data-zip-link="git_20HTML_20Report"></span></ul>
-</nav>
-
-<iframe id="myframe"></iframe>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
